@@ -2,8 +2,6 @@
 
 Aplicativo em Flutter para conversão de câmbio entre moedas, usando as cotações da [API de Moedas da AwesomeAPI](https://docs.awesomeapi.com.br/api-de-moedas), uma API REST.
 
-> **Status:** em desenvolvimento. O projeto ainda está na estrutura inicial do Flutter, e as funcionalidades abaixo descrevem o que se pretende construir.
-
 ## A ideia
 
 A pessoa informa um valor, escolhe a moeda de origem e a de destino, e o app busca a cotação atual na API para calcular o valor convertido.
@@ -14,12 +12,23 @@ Por exemplo, para converter 100 dólares em reais com a cotação de compra (`bi
 100 USD × 5,40 = 540,00 BRL
 ```
 
-## Funcionalidades previstas
+## Funcionalidades
 
 - Informar o valor a ser convertido
-- Selecionar as moedas de origem e de destino
+- Selecionar as moedas de origem e de destino (BRL, USD, EUR e GBP) e invertê-las
 - Consultar a cotação atual pela API
 - Exibir o valor convertido e a cotação utilizada
+
+## Estrutura do projeto
+
+```
+lib/
+├── main.dart
+├── service/   # Chamadas da API
+├── models/    # Modelos de dados
+├── pages/     # Páginas que integram os widgets
+└── widgets/   # Componentes que compõem uma página
+```
 
 ## API utilizada
 
@@ -81,6 +90,12 @@ O projeto usa a API sem chave de autenticação, então não é preciso criar co
 ```bash
 flutter pub get
 flutter run
+```
+
+Para rodar os testes:
+
+```bash
+flutter test
 ```
 
 O projeto tem configuração para Android, iOS e Web.
